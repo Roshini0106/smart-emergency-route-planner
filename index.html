@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EmergencyRoute | Smart Emergency System</title>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+            🚑 <span>EmergencyRoute</span>
+        </div>
+
+        <div class="header-right">
+
+            <div class="live-status">
+                <span class="status-dot"></span>
+                SYSTEM ONLINE
+            </div>
+
+            <div class="time">
+                LIVE MONITORING
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- PAGE TITLE -->
+        <section class="page-heading">
+
+            <div>
+                <p class="tag">EMERGENCY RESPONSE CENTER</p>
+
+                <h1>
+                    Smart Emergency
+                    <span>Control Room</span>
+                </h1>
+
+                <p>
+                    Monitor ambulance movement and plan emergency
+                    routes in real time.
+                </p>
+            </div>
+
+            <div class="emergency-badge">
+                <span>●</span> EMERGENCY MODE ACTIVE
+            </div>
+
+        </section>
+
+
+        <!-- STAT CARDS -->
+        <section class="stat-cards">
+
+            <div class="info-card">
+
+                <div class="card-icon">🚑</div>
+
+                <div>
+                    <small>AMBULANCE</small>
+                    <h2>AMB-001</h2>
+<p id="routeStatus" class="green">● READY</p>                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="card-icon">📍</div>
+
+                <div>
+                    <small>ROUTE DISTANCE</small>
+                    <h2 id="distance">4.8 km</h2>
+                    <p>Current route</p>
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="card-icon">⏱️</div>
+
+                <div>
+                    <small>ESTIMATED TIME</small>
+                    <h2 id="eta">12 min</h2>
+                    <p>Arrival estimate</p>
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="card-icon">🚦</div>
+
+                <div>
+                    <small>TRAFFIC</small>
+                    <h2>Moderate</h2>
+                    <p class="yellow">● MONITORING</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MAIN DASHBOARD -->
+        <section class="dashboard">
+
+
+            <!-- CONTROL PANEL -->
+            <div class="control-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <small>ROUTE CONTROL</small>
+                        <h2>Emergency Route</h2>
+                    </div>
+
+                    <span class="route-live">
+                        LIVE
+                    </span>
+
+                </div>
+
+
+                <label>
+                    🚑 Ambulance Location
+                </label>
+
+                <input
+                    type="text"
+                    id="startLocation"
+                    value="Chennai Central"
+                    placeholder="Enter ambulance location"
+                >
+
+
+                <label>
+                    🏥 Destination Hospital
+                </label>
+
+                <input
+                    type="text"
+                    id="hospitalLocation"
+                    value="Government General Hospital"
+                    placeholder="Enter hospital"
+                >
+
+
+                <button id="routeBtn">
+                    🚑 CALCULATE EMERGENCY ROUTE
+                </button>
+
+
+                <div class="route-status">
+
+                    <div>
+                        <span class="status-indicator"></span>
+
+                        <div>
+                            <small>ROUTE STATUS</small>
+                            <strong class="green">
+                                READY
+                            </strong>
+                        </div>
+                    </div>
+
+                    <div class="route-time">
+                        Updated just now
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MAP -->
+            <div class="map-container">
+
+                <div class="map-header">
+
+                    <div>
+                        <small>LIVE LOCATION MAP</small>
+                        <h2>Emergency Route</h2>
+                    </div>
+
+                    <div class="map-legend">
+                        <span>🚑 Ambulance</span>
+                        <span>🏥 Hospital</span>
+                    </div>
+
+                </div>
+
+                <div id="map"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BOTTOM INFORMATION -->
+        <section class="bottom-grid">
+
+            <div class="information-panel">
+
+                <small>AMBULANCE INFORMATION</small>
+
+                <div class="ambulance-details">
+
+                    <div>
+                        <span>ID</span>
+                        <strong>AMB-001</strong>
+                    </div>
+
+                    <div>
+                        <span>DRIVER</span>
+                        <strong>Emergency Unit</strong>
+                    </div>
+
+                    <div>
+                        <span>STATUS</span>
+                        <strong class="green">ACTIVE</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="information-panel">
+
+                <small>DESTINATION</small>
+
+                <h3>
+                    🏥 Government General Hospital
+                </h3>
+
+                <p>
+                    Emergency department destination
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        EmergencyRoute Smart Emergency System © 2026
+    </footer>
+
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
